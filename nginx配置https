@@ -10,3 +10,6 @@ ssl_certificate      /etc/nginx/server.crt;
 ssl_certificate_key  /etc/nginx/server.key;
 
 systemclt restart nginx;
+
+证书续签
+./certbot-auto renew
