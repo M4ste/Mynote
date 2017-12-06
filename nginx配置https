@@ -1,0 +1,12 @@
+wget https://dl.eff.org/certbot-auto
+chmod a+x certbot-auto
+
+systemctl stop nginx
+./certbot-auto certonly --standalone --email '你的邮箱地址' -d '你的域名地址'
+
+vim nginx.conf
+ssl on;
+ssl_certificate      /etc/nginx/server.crt;
+ssl_certificate_key  /etc/nginx/server.key;
+
+systemclt restart nginx;
