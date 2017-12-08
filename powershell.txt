@@ -1,0 +1,4 @@
+ windows log:
+ >Get-EventLog -list
+ >Get-EventLog -logname system
+ 
