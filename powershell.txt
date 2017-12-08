@@ -2,6 +2,6 @@
  >Get-EventLog -list
  >Get-EventLog -logname system
  
- >powershell.exe -c "(Get-EventLog -LogName security -InstanceId 4624).Message" //windows2008 $IPC 624:4625; 3389 4648:4624:4625
+ >powershell.exe -c "(Get-EventLog -LogName security -InstanceId 4624).Message" //windows2008 $IPC 4624:4625; 3389 4648:4624:4625
  >powershell.exe -c "(Get-EventLog -LogName security -Index 18852177).message"
  
